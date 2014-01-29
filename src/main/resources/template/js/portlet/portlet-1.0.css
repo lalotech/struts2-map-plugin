@@ -1,0 +1,10 @@
+/* 
+    Document   : portlet-1.0
+    Created on : 10-abr-2013, 13:09:45
+    Author     : lalotech
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.portlet{}
+.portlet-header{padding: 2px 5px;margin: 1px}
+.portlet-content{padding: 3px}
