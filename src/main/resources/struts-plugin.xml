@@ -24,5 +24,6 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
     
 <struts>
-    <bean type="org.apache.struts2.views.TagLibrary" name="sl" class="net.lalotech.struts2.map.views.LalotechTagLibrary" />
+    <bean type="org.apache.struts2.views.TagLibraryDirectiveProvider" name="sl" class="net.lalotech.struts2.map.views.LalotechTagLibrary" />
+    <bean type="org.apache.struts2.views.TagLibraryModelProvider" name="sl" class="net.lalotech.struts2.map.views.LalotechTagLibrary" />
 </struts>

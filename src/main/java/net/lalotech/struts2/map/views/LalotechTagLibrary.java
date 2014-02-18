@@ -18,15 +18,33 @@ import net.lalotech.struts2.map.views.velocity.components.PaneDirective;
 import net.lalotech.struts2.map.views.velocity.components.PollDirective;
 import net.lalotech.struts2.map.views.velocity.components.PolylineItemDirective;
 import net.lalotech.struts2.map.views.velocity.components.PortletDirective;
-import org.apache.struts2.views.TagLibrary;
+import org.apache.struts2.views.TagLibraryDirectiveProvider;
+import org.apache.struts2.views.TagLibraryModelProvider;
 
 /**
  *
  * @author Windows7x64
  */
-public class LalotechTagLibrary implements TagLibrary {
+public class LalotechTagLibrary implements TagLibraryDirectiveProvider,TagLibraryModelProvider{
 
-    @Override
+    public List<Class> getDirectiveClasses() {
+        Class[] directivas = new Class[]{
+            MapDirective.class,
+            FieldsetDirective.class,
+            HeadDirective.class,
+            PaneDirective.class,
+            PolylineItemDirective.class,
+            MarkerItemDirective.class,
+            PollDirective.class,
+            PortletDirective.class
+        };
+        return Arrays.asList(directivas);
+    }
+    public Object getModels(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
+        return new LalotechModels(stack, req, res);
+    }
+
+   /* @Override
     public Object getFreemarkerModels(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
         return new LalotechModels(stack, req, res);
     }
@@ -44,5 +62,5 @@ public class LalotechTagLibrary implements TagLibrary {
             PortletDirective.class
         };
         return Arrays.asList(directivas);
-    }
+    }*/    
 }
